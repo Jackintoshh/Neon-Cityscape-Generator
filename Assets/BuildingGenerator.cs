@@ -8,21 +8,18 @@ public class BuildingGenerator : MonoBehaviour
     public float height, width, botsize, midsize, topsize;
     public int numPieces, numBuildings;
     public GameObject street, bottom, middle, top;
-    //public List<GameObject> middle = new List<GameObject>();
-    //public List<GameObject> bottom = new List<GameObject>();
     Vector3 loc = new Vector3();
-    //Vector3 midpos = new Vector3();
     public string spawnNo, BuildingSpawn;
     void Start()
     {
         Instantiate(street, gameObject.transform);
         numPieces = 2;
         numBuildings = 4;
-       // for (int i = 0; i < numBuildings; i++)
-        //{
-            //spawnNo = i.ToString();
-            //BuildingSpawn = "BuildingSpawn" + spawnNo;
-            loc = street.transform.Find("BuildingSpawn3").position;
+        for (int i = 0; i < numBuildings; i++)
+        {
+            spawnNo = i.ToString();
+            BuildingSpawn = "BuildingSpawn" + spawnNo;
+            loc = street.transform.Find(BuildingSpawn).position;
             Debug.Log(spawnNo);
             Debug.Log(BuildingSpawn);
             loc += new Vector3(0, 0.5f, 0);
@@ -30,7 +27,7 @@ public class BuildingGenerator : MonoBehaviour
             bottom.transform.position = loc;
             botsize = Random.Range(1.5f, 3.5f);
             bottom.transform.localScale = new Vector3(botsize, Random.Range(1.5f, 2.5f), botsize);
-            //loc += new Vector3(0, 1.5f, 0);
+            
             Debug.Log(loc);
             for (int j = 0; j < numPieces; j++)
             {
@@ -43,7 +40,7 @@ public class BuildingGenerator : MonoBehaviour
             }
 
         
-        // }
+         }
     }
 
     // Update is called once per frame
