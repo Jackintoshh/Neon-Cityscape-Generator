@@ -12,7 +12,8 @@ public class BuildingGenerator : MonoBehaviour
     public string spawnNo, BuildingSpawn;
     void Start()
     {
-        Instantiate(street, gameObject.transform);
+        street = this.gameObject;
+        //Instantiate(street, gameObject.transform);
         numPieces = 2;
         numBuildings = 4;
         for (int i = 0; i < numBuildings; i++)

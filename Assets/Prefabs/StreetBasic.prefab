@@ -472,6 +472,7 @@ GameObject:
   - component: {fileID: 7787214158619355073}
   - component: {fileID: 1507306437951066590}
   - component: {fileID: 4664579619301655946}
+  - component: {fileID: 2102787962823750857}
   m_Layer: 0
   m_Name: StreetBasic
   m_TagString: Untagged
@@ -565,6 +566,31 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2102787962823750857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4750915868884569370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0935d105432d9ad4db3a2ae0dd8ecd25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 0
+  width: 0
+  botsize: 0
+  midsize: 0
+  topsize: 0
+  numPieces: 0
+  numBuildings: 0
+  street: {fileID: 0}
+  bottom: {fileID: 0}
+  middle: {fileID: 0}
+  top: {fileID: 0}
+  spawnNo: 
+  BuildingSpawn: 
 --- !u!1 &5370921050656787718
 GameObject:
   m_ObjectHideFlags: 0
