@@ -6,7 +6,7 @@ using System.Text;
 public class FPSController : MonoBehaviour
 {
     public GameObject mainCamera;
-    public float speed = 50.0f;
+    public float speed = 15.0f;
 
     public bool allowPitch = true;
 

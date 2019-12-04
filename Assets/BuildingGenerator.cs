@@ -23,8 +23,9 @@ public class BuildingGenerator : MonoBehaviour
             loc = street.transform.Find(BuildingSpawn).position;
             Debug.Log(spawnNo);
             Debug.Log(BuildingSpawn);
-            loc += new Vector3(0, 0.5f, 0);
+            loc += new Vector3(0, 4.5f, 0);
             bottom = (GameObject.CreatePrimitive(PrimitiveType.Cube));
+            bottom.transform.SetParent(this.gameObject.transform);
             bottom.transform.position = loc;
             botsize = Random.Range(1.5f, 3.5f);
             bottom.transform.localScale = new Vector3(botsize, Random.Range(1.5f, 2.5f), botsize);
@@ -32,9 +33,10 @@ public class BuildingGenerator : MonoBehaviour
             Debug.Log(loc);
             for (int j = 0; j < numPieces; j++)
             {
-                loc += new Vector3(0, 1.5f, 0);
+                loc += new Vector3(0, 7.5f, 0);
                 midsize = Random.Range(1.0f, 3.0f);
                 middle = (GameObject.CreatePrimitive(PrimitiveType.Cube));
+                middle.transform.SetParent(this.gameObject.transform);
                 middle.transform.position = loc;
                 middle.transform.localScale = new Vector3(midsize, Random.Range(1.5f, 2.5f), midsize);
                 
