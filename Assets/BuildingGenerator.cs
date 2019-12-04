@@ -42,6 +42,9 @@ public class BuildingGenerator : MonoBehaviour
                 
             }
 
+            loc = new Vector3(loc.x, middle.GetComponent<Renderer>().bounds.max.y + 1, loc.z);
+            GameObject topper = Instantiate(top, loc, Quaternion.identity);
+            topper.transform.parent = this.gameObject.transform;
         
          }
     }

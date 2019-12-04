@@ -588,7 +588,7 @@ MonoBehaviour:
   street: {fileID: 0}
   bottom: {fileID: 0}
   middle: {fileID: 0}
-  top: {fileID: 0}
+  top: {fileID: 2322360085181874469, guid: 2c0c265b359128c4fb3170d0c51512b2, type: 3}
   spawnNo: 
   BuildingSpawn: 
 --- !u!1 &5370921050656787718
