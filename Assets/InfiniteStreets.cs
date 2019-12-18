@@ -26,7 +26,7 @@ public class InfiniteStreets : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //player = Camera.
+        //Adapted from: https://www.youtube.com/watch?v=dycHQFEz8VI
         Instantiate(street, gameObject.transform);
         startPos = Vector3.zero;
 

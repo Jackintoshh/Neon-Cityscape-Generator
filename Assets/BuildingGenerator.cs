@@ -13,32 +13,44 @@ public class BuildingGenerator : MonoBehaviour
     void Start()
     {
         street = this.gameObject;
-        //Instantiate(street, gameObject.transform);
         numPieces = 2;
         numBuildings = 4;
+
+        GenerateBuildings();
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void GenerateBuildings()
+    {
         for (int i = 0; i < numBuildings; i++)
         {
+            //Get correct spawn location from Spawnpoint name
             spawnNo = i.ToString();
             BuildingSpawn = "BuildingSpawn" + spawnNo;
             loc = street.transform.Find(BuildingSpawn).position;
-            Debug.Log(spawnNo);
-            Debug.Log(BuildingSpawn);
             loc += new Vector3(0, 2.5f, 0);
-            r = Random.Range(25f, 160f)/255;
-            g = 4f/255;
-            b = Random.Range(160f, 170f)/255;
+
+            //Calculate random blue/pinkish colour
+            r = Random.Range(25f, 160f) / 255;
+            g = 4f / 255;
+            b = Random.Range(160f, 170f) / 255;
             Color botColour = new Color(r, g, b);
-            Debug.Log(botColour);
+            
+            //Create bottom of building
             bottom = (GameObject.CreatePrimitive(PrimitiveType.Cube));
             bottom.GetComponent<Renderer>().material.SetColor("_Color", botColour);
             bottom.transform.SetParent(this.gameObject.transform);
             bottom.transform.position = loc;
-            //GameObject bLight = Instantiate(buildingLight, loc, Quaternion.identity);
-            //bLight.transform.SetParent(this.gameObject.transform);
             botsize = Random.Range(1.5f, 3.5f);
             bottom.transform.localScale = new Vector3(botsize, Random.Range(1.5f, 2.5f), botsize);
-            
-            Debug.Log(loc);
+
+            //Create rest of the building pieces
             for (int j = 0; j < numPieces; j++)
             {
                 loc += new Vector3(0, 7.5f, 0);
@@ -48,19 +60,8 @@ public class BuildingGenerator : MonoBehaviour
                 middle.transform.SetParent(this.gameObject.transform);
                 middle.transform.position = loc;
                 middle.transform.localScale = new Vector3(midsize, Random.Range(1.5f, 2.5f), midsize);
-                
             }
 
-            //loc = new Vector3(loc.x, middle.GetComponent<Renderer>().bounds.max.y + 1, loc.z);
-            //GameObject topper = Instantiate(top, loc, Quaternion.identity);
-            //topper.transform.parent = this.gameObject.transform;
-        
-         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }

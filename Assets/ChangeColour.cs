@@ -14,6 +14,8 @@ public class ChangeColour : MonoBehaviour
     void Start()
     {
         startTime = Time.time;
+
+        //Get rough calculation of when to flash colours
         BPMCalc = BPM / 60;
     }
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AudioVisualizer : MonoBehaviour
 {
+    //Adapted from: https://www.youtube.com/watch?v=4Av788P9stk
+
     AudioSource audiosource;
     public static float[] samples = new float[512];
     public static float[] freqBand = new float[8];
@@ -28,25 +30,7 @@ public class AudioVisualizer : MonoBehaviour
 
     void MakeFreqBand()
     {
-        /*
-         * 22050/512 = 43 hz per sample
-         * 20 - 60hz
-         * 60 - 250
-         * 500 - 2000
-         * 4000 - 6000
-         * 6000 - 20000
-         * 
-         * 0 - 2 = 86
-         * 1 - 4 = 172    - 87-258
-         * 2 - 8 = 344    - 259-602
-         * 3
-         * 4
-         * 5
-         * 6
-         * 7
-         * 
-         * 
-         */
+        
 
         int count = 0;
 
