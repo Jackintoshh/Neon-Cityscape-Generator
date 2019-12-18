@@ -16,10 +16,10 @@ class Tile
 public class InfiniteStreets : MonoBehaviour
 {
     public GameObject street;
-    public GameObject player;
+    public GameObject player, streetLight;
     int streetSize = 50;
-    int halfStreetX = 5;
-    int halfStreetZ = 5;
+    int halfStreetX = 3;
+    int halfStreetZ = 4;
     Vector3 startPos;
     Hashtable tiles = new Hashtable();
 

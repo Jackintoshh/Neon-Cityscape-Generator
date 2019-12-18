@@ -7,32 +7,36 @@ public class ChangeColour : MonoBehaviour
 
     public float speed = 5.0f;
     public Color startColour, endColour;
-    float startTime;
+    float startTime, BPMCalc;
+    public int BPM = 95;
 
     // Start is called before the first frame update
     void Start()
     {
         startTime = Time.time;
+        BPMCalc = BPM / 60;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float t = (Time.time - startTime) * speed;
-        Debug.Log(GetComponent<Light>().color);
-        GetComponent<Light>().color = Color.Lerp(startColour, endColour, t);
-        //GetComponent<Light>().intensity = 20;
-        //Flash();
-        if(GetComponent<Light>().color == endColour)
-        {
-            GetComponent<Light>().color = startColour;
-            startTime = Time.time;
-        }
-        //GetComponent<Light>().color = Color.Lerp(startColour, endColour, t);
+        InvokeRepeating("Flash", 0, BPMCalc);
     }
 
     void Flash()
     {
-        GetComponent<Light>().intensity = Mathf.MoveTowards(0, 20, 20);
+        float t = (Time.time - startTime) * speed;
+        
+        GetComponent<Light>().color = Color.Lerp(startColour, endColour, t);
+        
+        if (GetComponent<Light>().color == endColour)
+        {
+            GetComponent<Light>().color = startColour;
+            startTime = Time.time;
+
+            return;
+        }
+
+        
     }
 }
